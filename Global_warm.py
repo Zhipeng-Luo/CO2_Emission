@@ -84,7 +84,7 @@ with col4:
     fig3.update_yaxes(title = 'Degree Celsius')
     st.plotly_chart(fig3, use_container_width=True)    
 
-st.header('CO2 Per Capita')
+st.header('CO2 Per Capita Map and Trend')
 col5, space3, col6 = st.columns([9,1,9])
 with col5:
     fig4 = px.choropleth(df_co2[df_co2['year'] == 2020], locations="iso_code",
@@ -100,7 +100,7 @@ with col6:
     countries = df_co2['country'].unique()
     options = st.multiselect('Country or Distinct', countries, default_countries)
     df3 = df_co2.query('country == @options')
-    fig5 = px.line(df3, "year", "co2_per_capita", color="country", title='CO2 Per Capita Trend')
+    fig5 = px.line(df3, "year", "co2_per_capita", color="country")
     st.plotly_chart(fig5, use_container_width=True)
 
 
