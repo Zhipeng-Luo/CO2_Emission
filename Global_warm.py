@@ -100,7 +100,7 @@ with col6:
     countries = df_co2['country'].unique()
     options = st.multiselect('Country or Distinct', countries, default_countries)
     df3 = df_co2.query('country == @options')
-    fig5 = px.line(df3, "year", "co2_per_capita", color="country")
+    fig5 = px.line(df3, "year", "co2_per_capita", color="country", title='CO2 Per Capita Trend')
     st.plotly_chart(fig5, use_container_width=True)
 
 
