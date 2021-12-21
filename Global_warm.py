@@ -80,7 +80,7 @@ with col3:
 
 with col4:
     df_climate = load_data_climate().query("Entity == 'World' and Year <=2021")
-    fig3 = px.scatter(df_climate, "Year", "annual_sea_surface_temperature_anomaly", trendline='lowess')
+    fig3 = px.scatter(df_climate, "Year", "annual_sea_surface_temperature_anomaly", title='Sea Surface Temperature Anomaly' )
     fig3.update_yaxes(title = 'Degree Celsius')
     st.plotly_chart(fig3, use_container_width=True)    
 
