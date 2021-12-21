@@ -110,8 +110,7 @@ st.header('Countries with Net-Zero Emission Targets')
 df_emission = load_net_zero()
 fig7 = px.choropleth(df_emission, locations="Code",
                         color="Is there a net-zero target?",
-                        hover_name="Entity",
-                        hover_data='Year'
+                        hover_name="Entity"
                     )
 st.plotly_chart(fig7, use_container_width=True)
 
