@@ -77,7 +77,13 @@ with col3:
     x=0.01
     ))
     st.plotly_chart(fig2, use_container_width=True)
-    
+
+with col4:
+    df_climate = load_data_climate().query("Entity == 'World' and Year <=2021")
+    fig3 = px.scatter(df_climate, x="Year", y="annual_sea_surface_temperature_anomaly",\
+                    trendline='lowess')
+    fig3.update_yaxes(title = 'Degree Celsius')
+    st.plotly_chart(fig3, use_container_width=True)    
 
 st.header('CO2 Per Capita')
 col5, space3, col6 = st.columns([9,1,9])
